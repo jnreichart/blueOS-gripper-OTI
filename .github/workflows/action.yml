@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy BlueOS Extension
-        uses: ES-Alexander/Deploy-BlueOS-Extension@v0.4
+        uses: BlueOS-community/Deploy-BlueOS-Extension@v1
         # specify the desired variables
         with:
           docker-username: ${{ secrets.DOCKER_USERNAME }}

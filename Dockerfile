@@ -14,7 +14,7 @@ COPY files/entrypoint.sh /entrypoint.sh
 
 COPY source/app.py /source/app.py
 COPY source/templates /source/templates
-RUN pip install --user serial flask
+RUN pip install --user pyserial flask
 
 # Add docker configuration
 LABEL permissions='{\

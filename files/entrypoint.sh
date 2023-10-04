@@ -6,5 +6,5 @@ set -m
 echo "Starting nginx.."
 nginx &
 echo "Starting our application.."
-cd source && flask --app app run
+cd source && python -m flask run --host=0.0.0.0
 sleep infinity

@@ -13,6 +13,7 @@ COPY files/register_service /site/register_service
 COPY files/entrypoint.sh /entrypoint.sh
 
 COPY source/app.py /source/app.py
+COPY source/templates /source/templates
 RUN pip install --user serial flask
 
 # Add docker configuration
@@ -21,6 +22,10 @@ LABEL permissions='{\
     "80/tcp": {}\
   },\
   "HostConfig": {\
+    "Privileged": true,\
+    "Binds": [\
+      "/dev:/dev:rw"\
+    ],\
     "PortBindings": {\
       "80/tcp": [\
         {\
